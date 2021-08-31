@@ -1,0 +1,32 @@
+<div class="panel panel-primary">
+  <div class="panel-heading d-flex">
+    <h2>Room List</h2>
+    <button type="button" class="btn btn-primary ms-2" routerLink="/add">Add</button>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Date</th>
+          <th>Start Hour</th>
+          <th>End Hour</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let room of rooms | async">
+          <td>{{room.name}}</td>
+          <td>{{room.date}}</td>
+          <td>{{room.startHour}}</td>
+          <td>{{room.endHour}}</td>
+          <td>
+            <button (click)="deleteRoom(room.id)" class="btn btn-danger">Delete</button>
+            <button (click)="updateRoom(room.id)" class="btn btn-success" style="margin-left: 10px">Update</button>
+            <button (click)="roomDetails(room.id)" class="btn btn-primary" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

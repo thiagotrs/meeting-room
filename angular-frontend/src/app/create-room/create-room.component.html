@@ -1,0 +1,30 @@
+<h3>Create Room</h3>
+
+<hr/>
+
+<div class="alert alert-danger" role="alert" *ngIf="errorInfo">{{errorInfo}}</div>
+
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name"><strong>Name</strong></label>
+    <input type="text" class="form-control" id="name" required [(ngModel)]="room.name" name="name">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="name"><strong>Date</strong></label>
+    <input type="text" class="form-control" id="date" required [(ngModel)]="room.date" name="date">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="name"><strong>Start Hour</strong></label>
+    <input type="text" class="form-control" id="startHour" required [(ngModel)]="room.startHour" name="startHour">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="name"><strong>End Hour</strong></label>
+    <input type="text" class="form-control" id="endHour" required [(ngModel)]="room.endHour" name="endHour">
+  </div>
+  <br>
+  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="button" class="ms-2 btn btn-primary" routerLink="/rooms">Back to Room List</button>
+</form>
